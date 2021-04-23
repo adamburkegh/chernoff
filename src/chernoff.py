@@ -18,6 +18,9 @@ EYE_SIZE=13; PUPIL_POS=14; EYEBROW_POS=15; EYEBROW_SLANT=16; EYEBROW_SIZE=17;
 HAIR_SIZE=18
 
 
+'''
+Nose, hair and eyebrows can be turned off entirely by setting to zero the parameters nose_length, eyebrow_size and hair_size, respectively.
+'''
 def cface(ax, upper_face,lower_face_overlap,vertical_overlap,upper_face_width,
               lower_face_width,nose_length,mouth_vertical,mouth_curve,
               mouth_width,eye_vertical,eye_separation,eye_slant,eye_eccen,
@@ -103,9 +106,10 @@ def cface(ax, upper_face,lower_face_overlap,vertical_overlap,upper_face_width,
     
     # draw eyebrows
     if eyebrow_size != 0:
-        # plot([-x11-x14/2-x14*x18/2,-x11-x14/2+x14*x18/2],[x10+x13*x14*(x16+x17),x10+x13*x14*(x16-x17)],'k')
-        plot([-x11-x14/2-x14*x18/2,-x11-x14/2+x14*x18/2],[x10+x13*x14*(x16+x17),x10+x13*x14*(x16-x17)],'k')
-        plot([x11+x14/2+x14*x18/2,x11+x14/2-x14*x18/2],[x10+x13*x14*(x16+x17),x10+x13*x14*(x16-x17)],'k')
+        plt.plot([-x11-x14/2-x14*x18/2,-x11-x14/2+x14*x18/2],
+                 [x10+x13*x14*(x16+x17),x10+x13*x14*(x16-x17)],'k')
+        plt.plot([x11+x14/2+x14*x18/2,x11+x14/2-x14*x18/2],
+                 [x10+x13*x14*(x16+x17),x10+x13*x14*(x16-x17)],'k')
 
     # draw face
     face_height = 1.9
@@ -114,23 +118,25 @@ def cface(ax, upper_face,lower_face_overlap,vertical_overlap,upper_face_width,
     ax.add_artist(p)
 
     # draw hair
-    # start_x = -face_width / 2.0; start_y = 0
-    face_rad = face_width / 2.0
-    hair_rad = face_rad + 0.25*hair_size
-    num_spikes = 10
-    angle_inc = pi / num_spikes
-    spike_inc = angle_inc / 2.0
-    x_series = []; y_series = [];
-    ct_angle = -spike_inc
-    for spike in range(num_spikes):
-        ct_angle += angle_inc 
-        pt_x = hair_rad*cos(ct_angle)
-        pt_y = hair_rad*sin(ct_angle)
-        x_series += [face_rad*cos(ct_angle-spike_inc),hair_rad*cos(ct_angle),
-                     face_rad*cos(ct_angle+spike_inc) ]
-        y_series += [face_rad*sin(ct_angle-spike_inc),hair_rad*sin(ct_angle),
-                     face_rad*sin(ct_angle+spike_inc) ]
-    plt.plot(x_series, y_series, 'k') 
+    if hair_size != 0:
+        face_rad = face_width / 2.0
+        hair_rad = face_rad + 0.25*hair_size
+        num_spikes = 10 # round(10*hair_size)
+        angle_inc = pi / num_spikes
+        spike_inc = angle_inc / 2.0
+        x_series = []; y_series = [];
+        ct_angle = -spike_inc
+        for spike in range(num_spikes):
+            ct_angle += angle_inc 
+            pt_x = hair_rad*cos(ct_angle)
+            pt_y = hair_rad*sin(ct_angle)
+            x_series += [face_rad*cos(ct_angle-spike_inc),
+                            hair_rad*cos(ct_angle),
+                         face_rad*cos(ct_angle+spike_inc) ]
+            y_series += [face_rad*sin(ct_angle-spike_inc),
+                            hair_rad*sin(ct_angle),
+                         face_rad*sin(ct_angle+spike_inc) ]
+        plt.plot(x_series, y_series, 'k') 
 
 
 
