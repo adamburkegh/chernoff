@@ -3,7 +3,12 @@
 # Based on https://gist.github.com/aflaxman/4043086
 # 
 
-from pylab import *
+# from pylab import *
+
+import matplotlib as mpl
+import matplotlib.pyplot as plt
+import numpy as np
+from numpy import arctan, cos, sin, pi
 
 
 UPPER_FACE=0; LOWER_FACE_OVERLAP=1; VERTICAL_OVERLAP=2; UPPER_FACE_WIDTH=3;
@@ -76,7 +81,7 @@ def cface(ax, upper_face,lower_face_overlap,vertical_overlap,upper_face_width,
     
     # draw nose
     if nose_length != 0:
-        plot([0,0], [-x6/2, x6/2], 'k')
+        plt.plot([0,0], [-x6/2, x6/2], 'k')
     
     # draw mouth
     p = mpl.patches.Arc( (0,-x7+.5/x8), 1/x8, 1/x8, theta1=270-180/pi*arctan(x8*x9), theta2=270+180/pi*arctan(x8*x9))
@@ -125,7 +130,7 @@ def cface(ax, upper_face,lower_face_overlap,vertical_overlap,upper_face_width,
                      face_rad*cos(ct_angle+spike_inc) ]
         y_series += [face_rad*sin(ct_angle-spike_inc),hair_rad*sin(ct_angle),
                      face_rad*sin(ct_angle+spike_inc) ]
-    plot(x_series, y_series, 'k') 
+    plt.plot(x_series, y_series, 'k') 
 
 
 

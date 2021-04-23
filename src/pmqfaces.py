@@ -1,4 +1,6 @@
 
+import matplotlib
+import matplotlib.pyplot as plt
 from chernoff import *
 
 
@@ -13,7 +15,7 @@ PMQ_DEFAULT_VEC[EYEBROW_SIZE] = 0
 
 
 def init_fig():
-    return figure(figsize=(11,11),frameon=False)
+    return plt.figure(figsize=(11,11),frameon=False)
 
 def pmq_face(fig,fitness,precision,simplicity,offset=0):
     vec = PMQ_DEFAULT_VEC.copy()
@@ -47,7 +49,7 @@ def main():
     pmf.add_model(0.8,0.4,0.5)
     pmf.add_model(0.9,0.1,0.9)
     pmf.add_model(0.1,0.9,0.1)
-    savefig("face.svg")
+    plt.savefig("face.svg")
     print("Output to face.svg")
 
 
