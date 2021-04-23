@@ -6,6 +6,8 @@ This simple library uses matplotlib and adapts an earlier version by [Abraham Fl
 
 ![Output example](eg.png)
 
+I first learned of this technique from the novel _Blindsight_, by Peter Watts, which is excellent, and everyone should go and read.
+
 # Installation
 
 `pip install -r requirements.txt`
