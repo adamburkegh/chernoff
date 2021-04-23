@@ -6,7 +6,7 @@ This simple library uses matplotlib and adapts an earlier version by [Abraham Fl
 
 ![Output example](eg.png)
 
-I first learned of this technique from the novel _Blindsight_, by Peter Watts, which is excellent, and everyone should go and read. And I should probably also mention some criticisms. A good roundup is by [Robert Kosara](https://eagereyes.org/criticism/chernoff-faces), and Lee et al (see References) found some empirical evidence that interpreting Chernoff Faces can actually be slow and inaccurate. So have a think about that too, if you're actually planning to use these in some serious context.
+I first learned of this technique from the novel _Blindsight_, by Peter Watts, which is excellent, and everyone should go and read. And I guess I should mention some criticisms of the technique. A good roundup is by [Robert Kosara](https://eagereyes.org/criticism/chernoff-faces). Lee et al (see References) also found some empirical evidence that interpreting Chernoff Faces can actually be slow and inaccurate. So have a think about that too, if you're actually planning to use these in some serious context.
 
 
 # Installation
