@@ -1,4 +1,4 @@
-# Chernoff Faces For Process Model Quality
+# Chernoff Faces
 
 [Chernoff faces](https://en.wikipedia.org/wiki/Chernoff_face) are a whimsical data visualization technique invented by Hermann Chernoff, exploiting the ability of human brains to recognize small differences in facial features easily. 
 
