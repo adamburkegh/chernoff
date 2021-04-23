@@ -15,6 +15,7 @@ This simple library uses matplotlib and adapts an earlier version by [Abraham Fl
 
 # Example Use
 
+
 ```
     vec[EYE_SIZE] = precision
     vec[EYEBROW_SLANT] = 1-simplicity
@@ -22,7 +23,7 @@ This simple library uses matplotlib and adapts an earlier version by [Abraham Fl
     cface(ax, *vec)
 ```
 
-See `pmqfaces.py`.
+See [`pmqfaces.py`](src/pmqfaces.py) for a full working example.
 
 
 # References
