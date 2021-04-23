@@ -6,7 +6,8 @@ This simple library uses matplotlib and adapts an earlier version by [Abraham Fl
 
 ![Output example](eg.png)
 
-I first learned of this technique from the novel _Blindsight_, by Peter Watts, which is excellent, and everyone should go and read.
+I first learned of this technique from the novel _Blindsight_, by Peter Watts, which is excellent, and everyone should go and read. And I should probably also mention some criticisms. A good roundup is by [Robert Kosara](https://eagereyes.org/criticism/chernoff-faces), and Lee et al (see References) found some empirical evidence that interpreting Chernoff Faces can actually be slow and inaccurate. So have a think about that too, if you're actually planning to use these in some serious context.
+
 
 # Installation
 
@@ -32,3 +33,4 @@ See [`pmqfaces.py`](src/pmqfaces.py) for a full working example.
 
 Herman Chernoff, The Use of Faces to Represent Points in K-Dimensional Space Graphically, Journal of the American Statistical Association, vol. 68, no. 342, pp. 361–368, 1973.
 
+Lee, M. D., Reilly, R. E., & Butavicius, M. E. (2003). An empirical evaluation of Chernoff faces, star glyphs, and spatial visualizations for binary data. Proceedings of the Asia-Pacific Symposium on Information Visualisation - Volume 24, 1–10.
